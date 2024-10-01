@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Telcome Industry Churn Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+        }
+        .form-container {
+            max-width: 500px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+        .form-container input {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 20px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        .form-container input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+        }
+        .form-container input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        .result {
+            font-size: 1.5em;
+            color: #4CAF50;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Student Placement Prediction</h2>
+        <form action="/predict" method="post">
+            <label for="gender">gender:</label>
+            <input type="number" name="gender" required>
+            
+            <label for="SeniorCitizen">SeniorCitizen:</label>
+            <input type="CGPA" step="0.01" name="SeniorCitizen" required>
+            
+            <label for="Partner">Partner:</label>
+            <input type="number" step="10" name="Partner" required>
+
+            <label for="Dependents">Dependents:</label>
+            <input type="number" step="10" name="Dependents" required>
+
+            <label for="tenure">tenure:</label>
+            <input type="number" step="10" name="tenure" required>
+
+            <label for="PhoneService">PhoneService:</label>
+            <input type="number" step="10" name="PhoneService" required>
+
+            <label for="MultipleLines">MultipleLines:</label>
+            <input type="number" step="10" name="InternetService" required>
+
+            <label for="OnlineSecurity">OnlineSecurity:</label>
+            <input type="number" step="10" name="OnlineSecurity" required>
+
+            <label for="MultipleLines">MultipleLines:</label>
+            <input type="number" step="10" name="MultipleLines" required>
+
+            <label for="OnlineBackup">OnlineBackup:</label>
+            <input type="number" step="10" name="OnlineBackup" required>
+
+            <label for="DeviceProtection">DeviceProtection:</label>
+            <input type="number" step="10" name="DeviceProtection" required>
+
+            <label for="TechSupport">TechSupport:</label>
+            <input type="number" step="10" name="TechSupport" required>
+
+            <label for="StreamingTV">StreamingTV:</label>
+            <input type="number" step="10" name="StreamingTV" required>
+
+            <label for="StreamingMovies">StreamingMovies:</label>
+            <input type="number" step="10" name="StreamingMovies" required>
+
+            <label for="Contract">Contract:</label>
+            <input type="number" step="10" name="Contract" required>
+
+            <label for="PaperlessBilling">PaperlessBilling:</label>
+            <input type="number" step="10" name="PaperlessBilling" required>
+
+            <label for="PaymentMethod">PaymentMethod:</label>
+            <input type="number" step="10" name="PaymentMethod" required>
+
+            <label for="MonthlyCharges">MonthlyCharges:</label>
+            <input type="number" step="10" name="MonthlyCharges" required>
+
+            <label for="TotalCharges">TotalCharges:</label>
+            <input type="number" step="10" name="TotalCharges" required>
+            
+        
+            <input type="submit" value="Predict">
+        </form>
+        {% if prediction_text %}
+        <div class="result">{{ prediction_text }}</div>
+        {% endif %}
+    </div>
+</body>
+</html>
